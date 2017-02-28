@@ -1,14 +1,26 @@
 package ru.bildovich;
 
 /**
- * bildovich
- * 28.02.2017.
+ * Class MyList.
+ * @author bildovich.
+ * @version 1.0.
  */
 public class MyList {
 
+    /**
+     * The value field.
+     */
     private Specifics[] values;
+
+    /**
+     * The size field.
+     */
     private int size = 0;
 
+    /**
+     * Method to add new values.
+     * @param newValues the new values.
+     */
     public void add(Specifics newValues) {
 
         if (values == null) {
@@ -24,11 +36,21 @@ public class MyList {
 
     }
 
+    /**
+     * The method removes the element at index.
+     * @param index of the element to remove.
+     * @return element of the values.
+     */
     public Specifics remove(int index) {
 
+        /**
+         * Deleted item
+         */
         Specifics removeElement = null;
 
-        // Проверка на выход за границы коллекции
+        /**
+         * Check the output for the collection of the border.
+         */
         if (index < 0 || index > size) {
             return removeElement;
         }
@@ -47,15 +69,15 @@ public class MyList {
         return removeElement;
     }
 
-    public void clear() {
-
-        for (int i = 0; i < size; i++)
-            values[i] = null;
-
-        size = 0;
-    }
-
-    public void arrayCopy(Specifics[] from,
+    /**
+     * Method for copying arrays.
+     * @param from the source array.
+     * @param fromIndex the initial index.
+     * @param to an array receiver.
+     * @param toIndex end index.
+     * @param length the length of the source array.
+     */
+    private void arrayCopy(Specifics[] from,
                           int fromIndex,
                           Specifics[] to,
                           int toIndex,
@@ -67,10 +89,19 @@ public class MyList {
 
     }
 
+    /**
+     * Getter method for size field.
+     * @return size.
+     */
     public int size() {
         return size;
     }
 
+    /**
+     * Getter method for values.
+     * @param i the index.
+     * @return specifics.
+     */
     public Specifics get(int i) {
         return values[i];
     }

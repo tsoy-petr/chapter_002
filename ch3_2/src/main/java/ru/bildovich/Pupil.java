@@ -1,8 +1,9 @@
 package ru.bildovich;
 
 /**
- * bildovich
- * 28.02.2017.
+ * Class Pupil.
+ * @author bildovich.
+ * @version 1.0.
  */
 public class Pupil implements Specifics{
 

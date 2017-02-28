@@ -1,23 +1,40 @@
 package ru.bildovich;
 
 /**
- * bildovich
- * 25.02.2017.
+ * Class Doctor.
+ * @author bildovich.
+ * @version 1.0.
+ *
  */
 public class Doctor extends Profession {
 
+    /**
+     * The collection patients.
+     */
     private MyList patients;
+
+    /**
+     * The collection specializations.
+     */
     private MyList specialization;
 
-    public void addProgect(String nameProject) {
+    /**
+     *  Method to add patient.
+     * @param namePatient the name.
+     */
+    public void addProgect(String namePatient) {
 
-        patients.add(new Patient(nameProject));
+        patients.add(new Patient(namePatient));
 
     }
 
-    public void delProgect(String pupilName) {
-        for (int i = 0; i < patients.size(); ) {
-            if (patients.get(i).getName().equals(pupilName)) {
+    /**
+     * Method to delet patient.
+     * @param namePatient the name.
+     */
+    public void delProgect(String namePatient) {
+        for (int i = 0; i < patients.size();) {
+            if (patients.get(i).getName().equals(namePatient)) {
                 patients.remove(i);
             } else {
                 i++;

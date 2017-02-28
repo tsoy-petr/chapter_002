@@ -1,12 +1,20 @@
 package ru.bildovich;
 
 /**
- * bildovich
- * 28.02.2017.
+ * @author bildovich.
+ * @version 1.0.
  */
 public class DoctorSpecialization implements Specialization, Specifics {
 
+    /**
+     * The name field.
+     */
     private String name;
+
+    /**
+     * Getter method for name field.
+     * @return name.
+     */
     @Override
     public String getName() {
         return name;
