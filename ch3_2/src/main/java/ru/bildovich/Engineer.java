@@ -59,4 +59,12 @@ public class Engineer extends Profession {
             }
         }
     }
+
+    /**
+     * Getter projects field.
+     * @return projects field.
+     */
+    public MyList getProjects() {
+        return projects;
+    }
 }
