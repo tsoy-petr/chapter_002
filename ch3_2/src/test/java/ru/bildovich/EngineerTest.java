@@ -37,7 +37,7 @@ public class EngineerTest {
     }
 
     /**
-     * Test method delete Patient class Doctor.
+     * Test method delete project class Engineer.
      */
     @Test
     public void whenDelPatient(){

@@ -92,4 +92,11 @@ public class Teacher extends Profession {
         specialization.add(new TeacherSpecialization(nameSpecialization));
     }
 
+    /**
+     * Getter pupils field.
+     * @return pupils fields.
+     */
+    public MyList getPupils() {
+        return pupils;
+    }
 }
