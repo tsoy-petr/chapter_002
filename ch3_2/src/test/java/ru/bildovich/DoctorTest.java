@@ -26,7 +26,7 @@ public class DoctorTest {
     }
 
     /**
-     * Test method addPatient class Doctor.
+     * Test method add Patient class Doctor.
      */
     @Test
     public void whenAddNewPatient() {
@@ -34,5 +34,16 @@ public class DoctorTest {
         doctorTest.addPatient(checked);
         String result = doctorTest.getPatients().get(doctorTest.getPatients().size() - 1).getName();
         assertThat(result, is(checked));
+    }
+
+    /**
+     * Test method delete Patient class Doctor.
+     */
+    @Test
+    public void whenDelPatient(){
+        String checked = "Иванов";
+        doctorTest.addPatient(checked);
+        doctorTest.delPatient(checked);
+        assertThat(0, is(doctorTest.getPatients().size()));
     }
 }
