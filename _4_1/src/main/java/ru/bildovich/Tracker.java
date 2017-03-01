@@ -39,7 +39,7 @@ public class Tracker {
      */
     public void delete(Item item) {
         int index = this.getIndexById(item.getId());
-        if ( index > 0) {
+        if ( index >= 0) {
 
             if (this.items == null) {
                 this.items = new Item[1];
@@ -109,7 +109,7 @@ public class Tracker {
     public Item findById(String id) {
         for (Item item : this.items
                 ) {
-            if (item.getId().equals(id)) {
+            if (item != null && item.getId().equals(id)) {
                 return item;
             }
         }
@@ -164,4 +164,6 @@ public class Tracker {
         }
         return -1;
     }
+
+
 }

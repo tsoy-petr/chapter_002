@@ -16,6 +16,16 @@ public class Item {
     private String name;
 
     /**
+     * Constructor Item class.
+     * @param id field.
+     * @param name field.
+     */
+    public Item(String id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    /**
      * Getter id field.
      * @return id field.
      */
@@ -46,4 +56,5 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
+
 }
