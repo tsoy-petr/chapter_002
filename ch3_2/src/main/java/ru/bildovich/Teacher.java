@@ -24,11 +24,24 @@ public class Teacher extends Profession {
     private MyList specialization;
 
     /**
+     * Constructor class Doctor.
+     *
+     * @param name the name field.
+     */
+    public Teacher(String name) {
+        super(name);
+    }
+
+    /**
      * Method to add pupil.
      *
      * @param namePupil the name.
      */
     public void addPupil(String namePupil) {
+
+        if (pupils == null){
+            pupils = new MyList();
+        }
 
         pupils.add(new Pupil(namePupil));
 
@@ -40,6 +53,11 @@ public class Teacher extends Profession {
      * @param pupilName the name.
      */
     public void deletPupils(String pupilName) {
+
+        if (pupils == null){
+            pupils = new MyList();
+        }
+
         for (int i = 0; i < pupils.size();) {
             if (pupils.get(i).getName().equals(pupilName)) {
                 pupils.remove(i);

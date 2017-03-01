@@ -38,6 +38,14 @@ public class Profession {
     private Specialization specialization;
 
     /**
+     * Constructor class Doctor.
+     * @param name the name field.
+     */
+    public Profession(String name) {
+        this.name = name;
+    }
+
+    /**
      * Settor method for specialization field.
      * @param specialization the specialization field.
      */
@@ -52,4 +60,5 @@ public class Profession {
     public void setSalary(double salary) {
         this.salary = salary;
     }
+
 }

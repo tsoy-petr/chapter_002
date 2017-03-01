@@ -2,9 +2,9 @@ package ru.bildovich;
 
 /**
  * Class Doctor.
+ *
  * @author bildovich.
  * @version 1.0.
- *
  */
 public class Doctor extends Profession {
 
@@ -19,26 +19,63 @@ public class Doctor extends Profession {
     private MyList specialization;
 
     /**
-     *  Method to add patient.
+     * Conctructor class Doctor.
+     *
+     * @param newName the name field.
+     */
+    public Doctor(String newName) {
+        super(newName);
+    }
+
+    /**
+     * Method to add patient.
+     *
      * @param namePatient the name.
      */
-    public void addProgect(String namePatient) {
+    public void addPatient(String namePatient) {
 
+        if (patients == null) {
+            patients = new MyList();
+        }
         patients.add(new Patient(namePatient));
 
     }
 
     /**
      * Method to delet patient.
+     *
      * @param namePatient the name.
      */
-    public void delProgect(String namePatient) {
-        for (int i = 0; i < patients.size();) {
+    public void delPatient(String namePatient) {
+
+        if (patients == null) {
+            patients = new MyList();
+        }
+
+        for (int i = 0; i < patients.size(); ) {
             if (patients.get(i).getName().equals(namePatient)) {
                 patients.remove(i);
             } else {
                 i++;
             }
         }
+    }
+
+    /**
+     * Returns a list of patients Method.
+     *
+     * @return list of patients.
+     */
+    public MyList getPatients() {
+        return patients;
+    }
+
+    /**
+     * Returns specialization Method.
+     *
+     * @return specialization field.
+     */
+    public MyList getSpecialization() {
+        return specialization;
     }
 }
