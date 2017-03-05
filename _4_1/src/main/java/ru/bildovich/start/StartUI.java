@@ -7,10 +7,15 @@ import ru.bildovich.models.Item;
  */
 public class StartUI {
 
+    /**
+     * Main method.
+     *
+     * @param args progamme.
+     */
     public static void main(String[] args) {
         Tracker tracker = new Tracker();
         tracker.add(new Item());
-        System.out.println(tracker.getItems()[tracker.getSize()-1].getId());
+        System.out.println(tracker.getItems()[tracker.getSize() - 1].getId());
         System.out.println(System.currentTimeMillis());
     }
 }
