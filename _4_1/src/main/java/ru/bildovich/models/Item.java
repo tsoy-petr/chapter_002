@@ -1,4 +1,6 @@
-package ru.bildovich;
+package ru.bildovich.models;
+
+import java.util.UUID;
 
 /**
  * Created by mac on 01.03.17.
@@ -14,6 +16,24 @@ public class Item {
      * Private "name" field.
      */
     private String name;
+
+    /**
+     * Private "description" field.
+     */
+    private String description;
+
+    /**
+     * Private "date create" field.
+     */
+    private long create;
+
+    /**
+     * Constructor Item class.
+     */
+    public Item() {
+        this.id = UUID.randomUUID().toString();
+        this.create = System.currentTimeMillis();
+    }
 
     /**
      * Constructor Item class.
