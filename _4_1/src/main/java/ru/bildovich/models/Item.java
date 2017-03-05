@@ -1,5 +1,6 @@
 package ru.bildovich.models;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 /**
@@ -28,6 +29,16 @@ public class Item {
     private long create;
 
     /**
+     * Private String desc.
+     */
+    private String desc;
+
+    /**
+     * Private array list comments;
+     */
+    private ArrayList<String> comments;
+
+    /**
      * Constructor Item class.
      */
     public Item() {
@@ -42,6 +53,11 @@ public class Item {
      */
     public Item(String id, String name) {
         this.id = id;
+        this.name = name;
+    }
+
+    public Item(String name){
+        this();
         this.name = name;
     }
 
