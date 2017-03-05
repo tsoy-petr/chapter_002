@@ -30,6 +30,8 @@ public class StartUI {
 
     public void init(){
 
+        Tracker tracker = new Tracker();
+
         int answer = 0;
         String answerString = "0";
         while (true)
@@ -50,7 +52,23 @@ public class StartUI {
 
             answer = Integer.parseInt(answerString);
 
-
+            if (answer == 1){
+                String nameItem = input.ask("Введите имя заявки: ");
+                if (!answerString.isEmpty()) {
+                    tracker.add(new Item(nameItem));
+                }
+            } else if (answer == 7) {
+                break;
+            } else if (answer == 4) {
+                System.out.println(" ------------------------------------- ");
+                System.out.println();
+                for (Item item :
+                        tracker.findAll()) {
+                    System.out.println(item.getName());
+                }
+                System.out.println();
+                System.out.println(" ------------------------------------- ");
+            } else break;
 
 
         }
