@@ -85,6 +85,10 @@ public class Item {
         return name;
     }
 
+    public long getCreate() {
+        return create;
+    }
+
     /**
      * Setter name field.
      * @param name field.
@@ -93,4 +97,11 @@ public class Item {
         this.name = name;
     }
 
+    public ArrayList<String> getComments() {
+        return comments;
+    }
+
+    public void setComments(ArrayList<String> comments) {
+        this.comments = comments;
+    }
 }

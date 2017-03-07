@@ -67,4 +67,13 @@ public class Engineer extends Profession {
     public MyList getProjects() {
         return projects;
     }
+
+    /**
+     * Method realizing implementation of the order.
+     * @param project field.
+     * @return result.
+     */
+    public boolean executeProject(Project project) {
+        return true;
+    }
 }

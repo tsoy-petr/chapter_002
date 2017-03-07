@@ -2,6 +2,10 @@ package ru.bildovich.start;
 
 import ru.bildovich.models.Item;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 /**
  * Created by mac on 04.03.17.
  */
@@ -177,6 +181,25 @@ public class Tracker {
         return -1;
     }
 
+    /**
+     * Override method.
+     * @return string field.
+     */
+    @Override
+    public String toString() {
+        StringBuilder resalt = new StringBuilder();
 
+        for (Item item:
+             items) {
+            Date date = new Date(item.getCreate());
+            SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+            resalt.append(item.getName());
+            resalt.append(" дата создания: ");
+            resalt.append(format.format(date));
+            resalt.append("\n");
+        }
+
+        return resalt.toString();
+    }
 }
 

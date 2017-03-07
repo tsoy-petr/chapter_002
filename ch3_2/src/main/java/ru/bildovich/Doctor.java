@@ -78,4 +78,14 @@ public class Doctor extends Profession {
     public MyList getSpecialization() {
         return specialization;
     }
+
+    /**
+     * Return result of cure.
+     * @param patient field.
+     * @return result boolean.
+     */
+    public boolean cure(Patient patient) {
+        return true;
+    }
+
 }

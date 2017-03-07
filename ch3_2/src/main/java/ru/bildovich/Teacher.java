@@ -99,4 +99,8 @@ public class Teacher extends Profession {
     public MyList getPupils() {
         return pupils;
     }
+
+    public boolean teach(Pupil student) {
+        return true;
+    }
 }

@@ -46,4 +46,10 @@ public class EngineerTest {
         engineerTest.delProgect(checked);
         assertThat(0, is(engineerTest.getProjects().size()));
     }
+
+    @Test
+    public void executeProjectTest() {
+        boolean result = engineerTest.executeProject(new Project("Robot creation"));
+        assertThat(true, is(result));
+    }
 }

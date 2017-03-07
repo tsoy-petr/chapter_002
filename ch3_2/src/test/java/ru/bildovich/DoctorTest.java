@@ -46,4 +46,13 @@ public class DoctorTest {
         doctorTest.delPatient(checked);
         assertThat(0, is(doctorTest.getPatients().size()));
     }
+
+    /**
+     * Test method cure.
+     */
+    @Test
+    public void cureTest() {
+       boolean result =  doctorTest.cure(new Patient("Sidorov"));
+       assertThat(true, is(result));
+    }
 }
