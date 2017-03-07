@@ -47,4 +47,14 @@ public class TeacherTest {
         teacherTest.deletPupils(checked);
         assertThat(1, is(teacherTest.getPupils().size()));
     }
+
+    /**
+     * Test method teach.
+     */
+    @Test
+    public void teachTest() {
+        boolean result = teacherTest.teach(new Pupil("Ivanov"));
+        assertThat(true, is(result));
+
+    }
 }
