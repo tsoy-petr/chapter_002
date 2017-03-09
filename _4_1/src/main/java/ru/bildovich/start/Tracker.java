@@ -15,7 +15,7 @@ public class Tracker {
     /**
      * Private items field.
      */
-    private Item[] items;
+    private Item[] items = new Item[0];
 
     /**
      * The size field.
@@ -182,6 +182,31 @@ public class Tracker {
     }
 
     /**
+     * Method find by date.
+     * @param datePattern String.
+     * @return finde Item.
+     */
+    public Item[] findByDate(String datePattern) {
+        Tracker buff = new Tracker();
+
+        for (Item item :
+                items) {
+            Date date = new Date(item.getCreate());
+            SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+            String dateFormate = format.format(date);
+
+            if (dateFormate.equals(datePattern)) {
+                buff.add(item);
+            }
+        }
+
+        return buff.getItems();
+
+    }
+
+
+
+    /**
      * Override method.
      * @return string field.
      */
@@ -191,15 +216,18 @@ public class Tracker {
 
         for (Item item:
              items) {
-            Date date = new Date(item.getCreate());
-            SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy hh:mm");
-            resalt.append(item.getName());
-            resalt.append(" дата создания: ");
-            resalt.append(format.format(date));
-            resalt.append("\n");
+            resalt.append(item.toString());
         }
 
         return resalt.toString();
+    }
+
+    /**
+     * Setter items.
+     * @param items feild.
+     */
+    public void setItems(Item[] items) {
+        this.items = items;
     }
 }
 

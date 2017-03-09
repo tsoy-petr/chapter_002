@@ -1,7 +1,7 @@
 package ru.bildovich.models;
 
-import java.util.ArrayList;
-import java.util.UUID;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * Created by mac on 01.03.17.
@@ -29,11 +29,6 @@ public class Item {
     private long create;
 
     /**
-     * Private String desc.
-     */
-    private String desc;
-
-    /**
      * Private array list comments;
      */
     private ArrayList<String> comments;
@@ -44,6 +39,7 @@ public class Item {
     public Item() {
         this.id = UUID.randomUUID().toString();
         this.create = System.currentTimeMillis();
+        this.description = "";
     }
 
     /**
@@ -59,6 +55,14 @@ public class Item {
     public Item(String name){
         this();
         this.name = name;
+    }
+
+    public Item(String id, String name, String description, long create) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+        this.create = create;
+        this.comments = new ArrayList<String>();
     }
 
     /**
@@ -104,4 +108,42 @@ public class Item {
     public void setComments(ArrayList<String> comments) {
         this.comments = comments;
     }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+
+        StringBuilder resalt = new StringBuilder();
+
+        Date date = new Date(this.create);
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+        resalt.append("Name: " + this.name);
+        resalt.append(" дата создания: ");
+        resalt.append(format.format(date));
+        resalt.append(" ID: " + id);
+        resalt.append(" description: " + description);
+        resalt.append("\n");
+
+        if (comments.size() > 0) {
+            resalt.append(" Комментарии: \n");
+            for (String comment :
+                    comments) {
+                resalt.append("     " + comment + "\n");
+            }
+        }
+
+        resalt.append("\n");
+
+        return resalt.toString();
+
+    }
+
+
 }
