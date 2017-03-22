@@ -229,5 +229,14 @@ public class Tracker {
     public void setItems(Item[] items) {
         this.items = items;
     }
+
+    public void edite (Item fresh) {
+
+        Item item = findById(fresh.getId());
+        if (item != null) {
+            item = fresh;
+        }
+
+    }
 }
 

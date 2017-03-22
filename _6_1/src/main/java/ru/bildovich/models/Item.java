@@ -131,7 +131,7 @@ public class Item {
         resalt.append(" description: " + description);
         resalt.append("\n");
 
-        if (comments.size() > 0) {
+        if (comments != null && comments.size() > 0) {
             resalt.append(" Комментарии: \n");
             for (String comment :
                     comments) {
@@ -142,6 +142,10 @@ public class Item {
         resalt.append("\n");
 
         return resalt.toString();
+
+    }
+
+    public void edite(Item item) {
 
     }
 
