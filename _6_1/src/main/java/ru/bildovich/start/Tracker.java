@@ -234,7 +234,8 @@ public class Tracker {
 
         Item item = findById(fresh.getId());
         if (item != null) {
-            item = fresh;
+            fresh.setComments(item.getComments());
+            items[Integer.valueOf(item.getId())] = fresh;
         }
 
     }
