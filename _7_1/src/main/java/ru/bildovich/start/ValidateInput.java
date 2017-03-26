@@ -1,10 +1,15 @@
 package ru.bildovich.start;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * Created by mac on 24.03.17.
  * Class
  */
 public class ValidateInput extends ConsoleInput {
+
+    private final String MP = "(/d+)";
 
     @Override
     public String ask(String question) {
@@ -51,11 +56,15 @@ public class ValidateInput extends ConsoleInput {
     }
 
     private boolean checkId(String id) throws IdExeption{
-        try {
-            Integer.valueOf(id);
+
+        Pattern p = Pattern.compile("[0-9]+");
+        Matcher m = p.matcher(id);
+
+        if (m.matches()) {
             return true;
-        } catch (NumberFormatException ie) {
+        } else {
             throw new IdExeption(id);
         }
+
     }
 }
